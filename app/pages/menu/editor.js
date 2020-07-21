@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Editor, EditorState, RichUtils } from 'draft-js'
@@ -17,8 +16,10 @@ const styleMap = {
 
 function getBlockStyle(block) {
   switch (block.getType()) {
-    case 'blockquote': return 'RichEditor-blockquote';
-    default: return null;
+    case 'blockquote':
+      return 'RichEditor-blockquote';
+    default:
+      return null;
   }
 }
 
@@ -100,7 +101,9 @@ export default class app extends Component {
             onTab={this.onTab}
             placeholder="Tell a story..."
             // ref="editor"
-            ref={(c) => { this.editor = c }}
+            ref={(c) => {
+              this.editor = c
+            }}
             spellCheck
           />
         </div>
